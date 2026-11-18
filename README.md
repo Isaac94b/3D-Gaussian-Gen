@@ -5,14 +5,14 @@ Interactive companion app to the CVCS 2026 paper
 by Ishak Barkat, Hermine Chatoux and Jean-Baptiste Thomas (Université Bourgogne Europe · IMVIA, UR 7535).
 
 A non-uniform color surface is modelled as a 3D Gaussian distribution in CIELAB, controlled by four parameters:
-mean color **μ** = (L\*, a\*, b\*), shape **S**, orientation **R** (three angles θ₁, θ₂, θ₃) and scale **σ**.
-For any setting the app renders the test texture next to a fixed grey reference, draws both 1σ ellipsoids in 3D,
-and reports in real time the ΔE between the mean colors together with four distribution distances:
+mean color **μ** = (L\*, a\*, b\*), shape **S** (limited to 4 different shapes), orientation **R** (three angles θ₁, θ₂, θ₃) and scale **σ**.
+For any setting the app renders the test texture next to a fixed grey reference, draws their 1σ, 2σ and 3σ
+ellipsoids in 3D, and reports in real time the ΔE between the mean colors together with four distribution distances:
 Kullback–Leibler, Bhattacharyya, 2-Wasserstein and Hellinger.
 
 ![The 3D Gaussian Stimulus Generator window](img/ui.png)
 
-*Parameter controls (left), reference and test textures with their 1σ ellipsoids in CIELAB (centre), ΔE and the four
+*Parameter controls (left), reference and test textures with their 1σ, 2σ, 3σ ellipsoids in CIELAB (centre), ΔE and the four
 distances (right). Here shape, orientation and scale all change while ΔE stays at 0.*
 
 | reference | μ: a\* = 18 | S: needle | R: θ₁ = 45° | σ: 5 → 15 |
@@ -38,6 +38,9 @@ Remote Desktop or in a virtual machine.
 - Step chips (reference, μ, S, R, σ, all) or the **← / →** keys walk through each parameter.
 - Sliders: L\*, a\*, b\*; shape (sphere, smarties, pencil, needle); θ₁ (L\*–a\*), θ₂ (L\*–b\*), θ₃ (a\*–b\*); σ.
 - Drag the 3D view to rotate it; double-click to reset.
+- Under the 3D view, toggle the 1σ, 2σ and 3σ ellipsoids (or **all**). For a 3D Gaussian they contain
+  **19.9 %**, **73.9 %** and **97.1 %** of the colors (chi-square distribution with 3 degrees of freedom, not the
+  1D 68 / 95 / 99.7 % rule).
 
 ## Licence
 
